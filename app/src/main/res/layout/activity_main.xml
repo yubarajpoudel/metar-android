@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.yuvi.metar.utils.BindingUtils"/>
+        <variable
+            name="rawMetar"
+            type="com.yuvi.metar.data.Metar"/>
+        <variable
+            name="decodedMetar"
+            type="com.yuvi.metar.data.Metar"/>
+    </data>
+
+<LinearLayout
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/_16dp"
+    android:paddingTop="?attr/actionBarSize">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        android:id="@+id/autocomplete_airport"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8dp"
+            android:text="@string/search"/>
+
+    </LinearLayout>
+
+    <ViewSwitcher
+        android:id="@+id/switcher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_32dp"
+            android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/raw"
+        android:textSize="@dimen/_18sp"
+        android:textColor="@color/primaryText"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_metar_raw"
+        android:layout_width="match_parent"
+        tool:text="@string/title_metar_raw"
+        android:text="@{BindingUtils.showLoadingIfEmpty(rawMetar.data)}"
+        android:layout_marginTop="4dp"
+        android:textSize="@dimen/_16sp"
+        android:textColor="@color/primaryText"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_metar_raw_synced_date"
+        android:layout_width="match_parent"
+        android:text="@{BindingUtils.formatDate(rawMetar.lastSyncedTime)}"
+        android:layout_marginTop="4dp"
+        android:textStyle="italic"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_18sp"
+        android:textStyle="bold"
+        android:textColor="@color/primaryText"
+        android:text="@string/decoded"/>
+
+    <TextView
+        android:id="@+id/tv_metar_decoded"
+        android:layout_width="match_parent"
+        tool:text="@string/title_metar_decoded"
+        android:text="@{BindingUtils.showLoadingIfEmpty(decodedMetar.data)}"
+        android:textSize="@dimen/_16sp"
+        android:textColor="@color/primaryText"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_metar_decoded_synced_date"
+        android:layout_width="match_parent"
+        android:text="@{BindingUtils.formatDate(decodedMetar.lastSyncedTime)}"
+        android:layout_marginTop="4dp"
+        android:textStyle="italic"
+        android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    </ViewSwitcher>
+</LinearLayout>
+
+
+
+</layout>

@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Metar</string>
+    <string name="title_metar_raw">Metar Raw</string>
+    <string name="title_metar_decoded">Metar Decoded</string>
+    <string name="raw">Raw</string>
+    <string name="decoded">Decoded</string>
+    <string name="search">Search</string>
+
+<!--    Errors -->
+    <string name="err_station">Please type the airport name</string>
+    <string name="err_internet_connection">No internet connection available</string>
+
+<!--    Messages -->
+    <string name="mesg_loading_data">Loading data, Please wait</string>
+    <string name="mesg_connect_network">Please connect to internet and press search again</string>
+    <string name="mesg_airport">Please type airport name and press search to view metar data</string>
+
+    <string-array name="array_airports">
+        <item>EDAC</item>
+        <item>EDAH</item>
+        <item>EDBC</item>
+        <item>EDDB</item>
+        <item>EDDC</item>
+        <item>EDDE</item>
+        <item>EDDF</item>
+        <item>EDDG</item>
+        <item>EDDH</item>
+        <item>EDDI</item>
+        <item>EDDK</item>
+        <item>EDDL</item>
+        <item>EDDM</item>
+        <item>EDDN</item>
+        <item>EDDP</item>
+        <item>EDDR</item>
+        <item>EDDS</item>
+        <item>EDDT</item>
+        <item>EDDV</item>
+        <item>EDDW</item>
+        <item>EDFE</item>
+        <item>EDFH</item>
+        <item>EDFM</item>
+        <item>EDGS</item>
+        <item>EDHI</item>
+        <item>EDHK</item>
+        <item>EDHL</item>
+        <item>EDJA</item>
+        <item>EDKA</item>
+        <item>EDLN</item>
+        <item>EDLP</item>
+        <item>EDLV</item>
+        <item>EDLW</item>
+        <item>EDMA</item>
+        <item>EDMB</item>
+        <item>EDMO</item>
+        <item>EDNY</item>
+        <item>EDOP</item>
+        <item>EDQD</item>
+        <item>EDQM</item>
+        <item>EDRZ</item>
+        <item>EDSB</item>
+        <item>EDTA</item>
+        <item>EDTB</item>
+        <item>EDTD</item>
+        <item>EDTF</item>
+        <item>EDTK</item>
+        <item>EDTL</item>
+        <item>EDTN</item>
+        <item>EDTX</item>
+        <item>EDTY</item>
+        <item>EDVE</item>
+        <item>EDVK</item>
+        <item>EDXW</item>
+    </string-array>
+</resources>
+
